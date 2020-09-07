@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroHeart.Logging.Exceptionless", "MicroHeart.Logging.Exceptionless\MicroHeart.Logging.Exceptionless.csproj", "{585513FE-CD5E-4584-A201-11CB20EF2314}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{585513FE-CD5E-4584-A201-11CB20EF2314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{585513FE-CD5E-4584-A201-11CB20EF2314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{585513FE-CD5E-4584-A201-11CB20EF2314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{585513FE-CD5E-4584-A201-11CB20EF2314}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7749E395-CC9E-447C-897D-9B4FA3FD73B3}
+	EndGlobalSection
+EndGlobal
