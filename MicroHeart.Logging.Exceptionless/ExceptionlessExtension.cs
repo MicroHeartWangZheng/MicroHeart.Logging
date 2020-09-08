@@ -6,9 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MicroHeart.Logging.Exceptionless
 {
-    public static class ExlessLoggerExtensions
+    public static class ExceptionlessExtension
     {
-        public static void AddExlessLogging(this IApplicationBuilder app)
+        public static void UseExceptionlessLogging(this IApplicationBuilder app)
         {
             var provider = app.ApplicationServices;
             var configuration = provider.GetService<IConfiguration>();

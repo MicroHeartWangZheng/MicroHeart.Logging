@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MicroHeart.Logging.Exceptionless\MicroHeart.Logging.Exceptionless.csproj" />
+  </ItemGroup>
+
+
+</Project>

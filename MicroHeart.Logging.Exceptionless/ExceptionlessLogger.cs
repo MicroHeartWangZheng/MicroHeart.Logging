@@ -26,8 +26,20 @@ namespace MicroHeart.Logging.Exceptionless
         {
             var message = formatter(state, exception);
             var source = $"{_categoryName}{eventId}";
+
+            if (exception != null)
+            {
+                ExceptionlessClient.Default
+                  .CreateException(exception)
+                  .SetMessage(message)
+                  .SetSource(source)
+                  .Submit();
+                return;
+            }
             ExceptionlessClient.Default
                 .CreateLog(source, message, logLevel.ToString())
+                  .SetMessage(message)
+                  .SetSource(source)
                 .Submit();
         }
 
