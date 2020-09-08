@@ -25,22 +25,20 @@ namespace MicroHeart.Logging.Exceptionless
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             var message = formatter(state, exception);
-            var source = $"{_categoryName}{eventId}";
+            var source = $"{_categoryName}";
 
+            EventBuilder eventBuilder = null;
             if (exception != null)
-            {
-                ExceptionlessClient.Default
-                  .CreateException(exception)
-                  .SetMessage(message)
-                  .SetSource(source)
-                  .Submit();
-                return;
-            }
-            ExceptionlessClient.Default
-                .CreateLog(source, message, logLevel.ToString())
-                  .SetMessage(message)
-                  .SetSource(source)
-                .Submit();
+                eventBuilder = ExceptionlessClient.Default.CreateException(exception);
+            else
+                eventBuilder = ExceptionlessClient.Default.CreateLog(source, message, logLevel.ToString());
+            
+            eventBuilder.SetMessage(message).SetSource(source);
+
+            if (eventId != 0)
+                eventBuilder.SetProperty("enentId", eventId);
+
+            eventBuilder.Submit();
         }
 
         private class NoopDisposable : IDisposable
