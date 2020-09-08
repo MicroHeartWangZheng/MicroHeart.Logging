@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>MicroHeart</Authors>
+    <Company />
+    <Product />
+    <PackageProjectUrl>https://github.com/MicroHeartWangZheng/Logging</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MicroHeartWangZheng/Logging.git</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
