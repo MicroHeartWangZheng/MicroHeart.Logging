@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MicroHeart.Logging.Exceptionless\MicroHeart.Logging.Exceptionless.csproj" />
+    <ProjectReference Include="..\MicroHeart.Logging.Elasticsearch\MicroHeart.Logging.Elasticsearch.csproj" />
   </ItemGroup>
 
 

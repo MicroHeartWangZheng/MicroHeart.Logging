@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MicroHeart.Logging.Exceptionless;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using MicroHeart.Logging.Elasticsearch;
 
 namespace MicroHeart.Logging.Test
 {
@@ -26,6 +20,7 @@ namespace MicroHeart.Logging.Test
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddElasticsearchLogger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,7 +31,6 @@ namespace MicroHeart.Logging.Test
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseExceptionlessLogging();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -45,6 +39,7 @@ namespace MicroHeart.Logging.Test
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
