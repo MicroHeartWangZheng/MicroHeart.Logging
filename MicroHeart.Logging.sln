@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroHeart.Logging.Elasticsearch", "MicroHeart.Logging.Elasticsearch\MicroHeart.Logging.Elasticsearch.csproj", "{103AE1E2-9760-484B-9C5A-CF61AEE7C606}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroHeart.Logging.Test", "MicroHeart.Logging.Test\MicroHeart.Logging.Test.csproj", "{7019A65D-E49A-4F14-BD4D-889306B005FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroHeart.Logging.Demo", "MicroHeart.Logging.Demo\MicroHeart.Logging.Demo.csproj", "{7019A65D-E49A-4F14-BD4D-889306B005FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
