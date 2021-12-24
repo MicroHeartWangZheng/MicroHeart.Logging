@@ -8,10 +8,11 @@ namespace MicroHeart.Logging.Elasticsearch
     public class ElasticsearchLogger : ILogger
     {
         private readonly IBaseRepository<LogEntity> logRepository;
-
-        public ElasticsearchLogger(IBaseRepository<LogEntity> logRepository)
+        private ElasticsearchLoggerOptions options;
+        public ElasticsearchLogger(IBaseRepository<LogEntity> logRepository, ElasticsearchLoggerOptions options)
         {
             this.logRepository = logRepository;
+            this.options = options;
         }
 
         public IDisposable BeginScope<TState>(TState state)
@@ -21,11 +22,13 @@ namespace MicroHeart.Logging.Elasticsearch
 
         public bool IsEnabled(LogLevel logLevel)
         {
-            return true;
+            return logLevel >= options.Level ? true : false;
         }
 
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
+            if (!IsEnabled(logLevel))
+                return;
             string message = string.Empty;
             if (formatter != null)
                 message = formatter(state, exception);
@@ -41,11 +44,12 @@ namespace MicroHeart.Logging.Elasticsearch
             if (string.IsNullOrEmpty(message))
                 return;
 
-            var result = logRepository.Insert(new LogEntity()
+            logRepository.Insert(new LogEntity()
             {
-                EventId = eventId,
-                Level = logLevel,
-                Message = message
+                EventId = eventId.Name,
+                Level = logLevel.ToString(),
+                Message = message,
+                ProjectName = options.ProjectName
             });
         }
     }

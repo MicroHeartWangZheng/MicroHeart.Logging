@@ -1,7 +1,6 @@
 ﻿using ElasticSearch.Repository;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
+using Microsoft.Extensions.Options;
 
 namespace MicroHeart.Logging.Elasticsearch
 {
@@ -9,14 +8,18 @@ namespace MicroHeart.Logging.Elasticsearch
     {
         private readonly IBaseRepository<LogEntity> logRepository;
 
-        public ElasticsearchLoggerProvider(IBaseRepository<LogEntity> logRepository)
+        private ElasticsearchLoggerOptions options;
+
+        public ElasticsearchLoggerProvider(IBaseRepository<LogEntity> logRepository,
+            IOptions<ElasticsearchLoggerOptions> options)
         {
             this.logRepository = logRepository;
+            this.options = options.Value;
         }
 
         public ILogger CreateLogger(string categoryName)
         {
-            return new ElasticsearchLogger(logRepository);
+            return new ElasticsearchLogger(logRepository, options);
         }
 
         public void Dispose()

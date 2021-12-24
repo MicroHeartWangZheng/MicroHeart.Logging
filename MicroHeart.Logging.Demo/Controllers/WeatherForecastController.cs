@@ -25,8 +25,18 @@ namespace MicroHeart.Logging.Test.Controllers
         [HttpGet]
         public void Get()
         {
-            _logger.LogDebug(_eventIdProvider.EventId, "测试Debug");
-            _logger.LogInformation(_eventIdProvider.EventId, "测试哈哈哈哈");
+
+            try
+            {
+                DateTime? dateTime = null;
+
+                var year = dateTime.Value.Year;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(_eventIdProvider.EventId, ex, "测试");
+            }
+
             LogA();
             LogB();
         }

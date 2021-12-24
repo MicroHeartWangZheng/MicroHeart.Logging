@@ -9,9 +9,8 @@ namespace MicroHeart.Logging.Elasticsearch
 
         public EventIdProvider()
         {
-            var id = (int)(DateTime.Now.Ticks % int.MaxValue);
             var name = $"{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}";
-            EventId = new EventId(id, name);
+            EventId = new EventId(0, name);
         }
     }
 }
