@@ -10,8 +10,6 @@ namespace MicroHeart.Logging.Elasticsearch
     {
         public static IServiceCollection AddElasticsearchLogger(this IServiceCollection services)
         {
-            services.AddElasticSearch();
-
             var serviceProvider = services.BuildServiceProvider();
             var configuration = serviceProvider.GetService<IConfiguration>();
             services.Configure<ElasticsearchLoggerOptions>(configuration.GetSection("ElasticsearchLogger"));

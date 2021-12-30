@@ -2,9 +2,6 @@
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
-*/.vs
-*/bin
-*/obj/
-*/Server
-/.vs
-/.vs/MicroHeart.Logging/config
+/.vs/MicroHeart.Logging
+/Logging.Elasticsearch/bin/Debug
+/Logging.Elasticsearch/obj

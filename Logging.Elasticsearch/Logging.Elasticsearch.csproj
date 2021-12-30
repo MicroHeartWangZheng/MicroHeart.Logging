@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>MicroHeart.Logging.Elasticsearch</PackageId>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>MicroHeart</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MicroHeart.ElasticSearch.Repository" Version="1.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.22" />
+  </ItemGroup>
+
+</Project>

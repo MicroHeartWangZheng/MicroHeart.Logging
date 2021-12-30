@@ -5,7 +5,7 @@ namespace MicroHeart.Logging.Elasticsearch
 {
     public class EventIdProvider
     {
-        public EventId EventId { get; }
+        public EventId EventId { get; set; }
 
         public EventIdProvider()
         {
