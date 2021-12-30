@@ -3,7 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
-namespace MicroHeart.Logging.Elasticsearch
+namespace Logging.Elasticsearch
 {
     public class ElasticsearchLogger : ILogger
     {
@@ -44,7 +44,7 @@ namespace MicroHeart.Logging.Elasticsearch
             if (string.IsNullOrEmpty(message))
                 return;
 
-            logRepository.Insert(new LogEntity()
+           logRepository.Insert(new LogEntity()
             {
                 EventId = eventId.Name,
                 Level = logLevel.ToString(),

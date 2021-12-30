@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace MicroHeart.Logging.Elasticsearch
+namespace Logging.Elasticsearch
 {
     public class ElasticsearchLoggerProvider : ILoggerProvider
     {

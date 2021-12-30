@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace MicroHeart.Logging.Elasticsearch
+namespace Logging.Elasticsearch
 {
     public class ElasticsearchLoggerOptions
     {

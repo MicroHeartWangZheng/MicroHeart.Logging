@@ -1,10 +1,9 @@
 ﻿using ElasticSearch.Repository;
-using ElasticSearch.Repository.Extensions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace MicroHeart.Logging.Elasticsearch
+namespace Logging.Elasticsearch
 {
     public static class ElasticsearchLoggerExtensions
     {

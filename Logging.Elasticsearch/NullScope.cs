@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace MicroHeart.Logging.Elasticsearch
+namespace Logging.Elasticsearch
 {
     internal class NullScope : IDisposable
     {

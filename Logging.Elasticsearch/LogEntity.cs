@@ -1,7 +1,7 @@
 ﻿using Nest;
 using System;
 
-namespace MicroHeart.Logging.Elasticsearch
+namespace Logging.Elasticsearch
 {
     public class LogEntity
     {
