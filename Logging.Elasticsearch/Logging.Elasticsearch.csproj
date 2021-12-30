@@ -5,6 +5,8 @@
     <PackageId>MicroHeart.Logging.Elasticsearch</PackageId>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>MicroHeart</Authors>
+    <Version>1.0.1</Version>
+    <Company>JiePei</Company>
   </PropertyGroup>
 
   <ItemGroup>
