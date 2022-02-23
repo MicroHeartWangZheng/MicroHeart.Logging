@@ -1,4 +1,5 @@
 ﻿using ElasticSearch.Repository;
+using Logging.Elasticsearch.Repository;
 using Microsoft.Extensions.Logging;
 using System;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
@@ -7,11 +8,11 @@ namespace Logging.Elasticsearch
 {
     public class ElasticsearchLogger : ILogger
     {
-        private readonly IBaseRepository<LogEntity> logRepository;
+        private readonly ILogEsRepository logEsRepository;
         private ElasticsearchLoggerOptions options;
-        public ElasticsearchLogger(IBaseRepository<LogEntity> logRepository, ElasticsearchLoggerOptions options)
+        public ElasticsearchLogger(ILogEsRepository logEsRepository, ElasticsearchLoggerOptions options)
         {
-            this.logRepository = logRepository;
+            this.logEsRepository = logEsRepository;
             this.options = options;
         }
 
@@ -44,7 +45,7 @@ namespace Logging.Elasticsearch
             if (string.IsNullOrEmpty(message))
                 return;
 
-           logRepository.Insert(new LogEntity()
+           logEsRepository.Insert(new LogEntity()
             {
                 EventId = eventId.Name,
                 Level = logLevel.ToString(),

@@ -1,4 +1,5 @@
 ﻿using ElasticSearch.Repository;
+using Logging.Elasticsearch.Repository;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -6,20 +7,20 @@ namespace Logging.Elasticsearch
 {
     public class ElasticsearchLoggerProvider : ILoggerProvider
     {
-        private readonly IBaseRepository<LogEntity> logRepository;
+        private readonly ILogEsRepository logEsRepository;
 
         private ElasticsearchLoggerOptions options;
 
-        public ElasticsearchLoggerProvider(IBaseRepository<LogEntity> logRepository,
+        public ElasticsearchLoggerProvider(ILogEsRepository logEsRepository,
             IOptions<ElasticsearchLoggerOptions> options)
         {
-            this.logRepository = logRepository;
+            this.logEsRepository = logEsRepository;
             this.options = options.Value;
         }
 
         public ILogger CreateLogger(string categoryName)
         {
-            return new ElasticsearchLogger(logRepository, options);
+            return new ElasticsearchLogger(logEsRepository, options);
         }
 
         public void Dispose()
