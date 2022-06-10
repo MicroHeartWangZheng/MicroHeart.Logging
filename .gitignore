@@ -5,3 +5,4 @@
 /.vs/MicroHeart.Logging
 /Logging.Elasticsearch/bin/Debug
 /Logging.Elasticsearch/obj
+/.vs
