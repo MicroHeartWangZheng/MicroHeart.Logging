@@ -14,7 +14,7 @@ namespace Logging.Elasticsearch
         [Keyword]
         public string Level { get; set; }
 
-        [Keyword]
+        [Text]
         public string Message { get; set; }
 
         [Keyword]
