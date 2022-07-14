@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <PackageId>JiePei.Logging.Elasticsearch</PackageId>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>MicroHeart.Logging.Elasticsearch</PackageId>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>MicroHeart</Authors>
-    <Version>1.0.3</Version>
-    <Company>www.jiepei.com</Company>
+    <Version>1.0.2</Version>
+    <Company></Company>
     <Description>基于Elasticsearch的日志组件</Description>
     <RepositoryUrl>https://github.com/MicroHeartWangZheng/MicroHeart.Logging</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JiePei.ElasticSearch.Repository" Version="1.0.1" />
+    <PackageReference Include="MicroHeart.ElasticSearch.Repository" Version="1.0.3" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.18" />
   </ItemGroup>
 
