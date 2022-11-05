@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MicroHeart.ElasticSearch.Repository" Version="1.0.3" />
+    <PackageReference Include="MicroHeart.ElasticSearch.Repository" Version="1.0.6" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.18" />
   </ItemGroup>
 
