@@ -5,7 +5,7 @@
     <PackageId>MicroHeart.Logging.Elasticsearch</PackageId>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>MicroHeart</Authors>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Company></Company>
     <Description>基于Elasticsearch的日志组件</Description>
     <RepositoryUrl>https://github.com/MicroHeartWangZheng/MicroHeart.Logging</RepositoryUrl>
