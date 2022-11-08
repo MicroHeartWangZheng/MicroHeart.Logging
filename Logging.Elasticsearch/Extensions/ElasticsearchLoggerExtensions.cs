@@ -1,7 +1,5 @@
-﻿using ElasticSearch.Repository;
-using ElasticSearch.Repository.Extensions;
+﻿using ElasticSearch.Repository.Extensions;
 using Logging.Elasticsearch.Repository;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -33,6 +31,7 @@ namespace Logging.Elasticsearch
             {
                 var logOptions = serviceProvider.GetService<IOptions<ElasticsearchLoggerOptions>>().Value;
                 options.IndexPrefix = string.Empty;
+                options.DisableDirectStreaming = false;
                 options.ConnectionStrings = logOptions.ElasticsearchUrls;
             });
             return services;
